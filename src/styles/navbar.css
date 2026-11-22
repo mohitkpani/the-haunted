@@ -1,0 +1,71 @@
+.haunted-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 75px;
+    padding: 18px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    z-index: 10;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.85),
+            transparent);
+}
+
+.nav-logo {
+    font-family: "Cinzel", serif;
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+.nav-logo span {
+    color: #c0002b;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    color: #d7cdd0;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e00035;
+}
+
+@media (max-width: 700px) {
+    .haunted-navbar {
+        min-height: 60px;
+        padding: 12px 16px;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        overflow-x: auto;
+        gap: 20px;
+        padding-bottom: 8px;
+    }
+
+    .nav-links a {
+        flex-shrink: 0;
+        font-size: 9px;
+    }
+}

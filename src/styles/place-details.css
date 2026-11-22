@@ -1,0 +1,343 @@
+/* =================================
+   PLACE DETAILS PAGE
+================================= */
+
+.place-details-page {
+    min-height: 100vh;
+    padding: 100px 5% 80px;
+    color: #fff;
+
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.94)),
+        url("/images/background-images/haunted-places-background.webp");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.place-details-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* =================================
+   BACK LINK
+================================= */
+
+.place-back-link {
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    margin-bottom: 30px;
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    color: #ccc;
+    font-family: inherit;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-decoration: none;
+
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.place-back-link:hover {
+    color: #ff3030;
+}
+
+/* =================================
+   MAIN IMAGE
+================================= */
+
+.place-details-image {
+    width: 100%;
+    height: 430px;
+    overflow: hidden;
+
+    border: 1px solid rgba(190, 20, 20, 0.6);
+    border-radius: 10px;
+    background: #080808;
+}
+
+.place-details-image img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/* =================================
+   DETAILS CONTENT
+================================= */
+
+.place-details-content {
+    max-width: 850px;
+    margin: 35px auto 0;
+    text-align: center;
+}
+
+.place-details-category {
+    color: #ff3030;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 5px;
+    margin-bottom: 15px;
+}
+
+.place-details-content h1 {
+    color: #fff;
+    font-size: clamp(32px, 5vw, 55px);
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+.place-details-location {
+    color: #aaa;
+    font-size: 15px;
+}
+
+.place-details-divider {
+    width: 90px;
+    height: 3px;
+    margin: 25px auto;
+
+    background: #d00000;
+    box-shadow: 0 0 12px #ff0000;
+}
+
+.place-details-description {
+    max-width: 750px;
+    margin: 0 auto 35px;
+
+    color: #c2c2c2;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* =================================
+   EXPLORE MORE BUTTON
+================================= */
+
+.place-back-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 13px 25px;
+
+    color: #fff;
+    background: #a50000;
+    border: 1px solid #e52b2b;
+    border-radius: 5px;
+
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+
+    transition: all 0.3s ease;
+}
+
+.place-back-button:hover {
+    background: #e00000;
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.4);
+}
+
+/* =================================
+   NOT FOUND PAGE
+================================= */
+
+.place-not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+    padding: 25px;
+
+    background: #080808;
+    color: white;
+    text-align: center;
+}
+
+.place-not-found h1 {
+    color: #ff3030;
+}
+
+.place-not-found p {
+    color: #aaa;
+}
+
+.place-not-found a {
+    color: white;
+    text-decoration: none;
+}
+
+/* =================================
+   TABLET
+================================= */
+
+@media (max-width: 1000px) {
+    .place-details-image {
+        height: 350px;
+    }
+}
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .place-details-page {
+        padding: 110px 16px 55px;
+
+        background-color: #050505;
+
+        background-image:
+            linear-gradient(to bottom,
+                rgba(5, 5, 8, 0.35),
+                rgba(5, 5, 8, 0.75) 180px,
+                #050505 420px),
+            url("/images/background-images/haunted-places-background.webp");
+
+        background-size:
+            100% 420px,
+            100% auto;
+
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .place-details-container {
+        width: 100%;
+    }
+
+    .place-back-link {
+        margin-bottom: 25px;
+        font-size: 11px;
+        letter-spacing: 1.5px;
+    }
+
+    .place-details-image {
+        height: 250px;
+    }
+
+    .place-details-content {
+        margin-top: 25px;
+    }
+
+    .place-details-category {
+        font-size: 11px;
+        letter-spacing: 4px;
+    }
+
+    .place-details-content h1 {
+        font-size: 32px;
+        letter-spacing: 1px;
+    }
+
+    .place-details-location {
+        font-size: 13px;
+    }
+
+    .place-details-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .place-back-button {
+        width: 100%;
+    }
+}
+
+/* Place information sections */
+.place-info-section {
+    margin-top: 38px;
+    padding: 25px;
+    background: rgba(10, 10, 10, 0.78);
+    border: 1px solid rgba(160, 20, 20, 0.35);
+    border-left: 3px solid #8b0000;
+    border-radius: 8px;
+}
+
+.place-info-section h2 {
+    margin: 0 0 16px;
+    color: #c62828;
+    font-family: Georgia, serif;
+    font-size: 21px;
+    letter-spacing: 2px;
+}
+
+.place-info-section p {
+    margin: 0;
+    color: #c5c5c5;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+/* Quick facts */
+.quick-facts {
+    margin-top: 30px;
+}
+
+.quick-fact-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #c5c5c5;
+    font-size: 15px;
+}
+
+.quick-fact-row:last-child {
+    border-bottom: none;
+}
+
+.quick-fact-row span:first-child {
+    color: #e0e0e0;
+    font-weight: 600;
+}
+
+.quick-fact-row span:last-child {
+    text-align: right;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .place-info-section {
+        margin-top: 25px;
+        padding: 18px;
+    }
+
+    .place-info-section h2 {
+        font-size: 17px;
+        letter-spacing: 1px;
+    }
+
+    .place-info-section p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .quick-fact-row {
+        font-size: 13px;
+        gap: 12px;
+    }
+}
+
+.place-back-button {
+    display: inline-block;
+    margin-top: 25px;
+}

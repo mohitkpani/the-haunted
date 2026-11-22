@@ -1,0 +1,131 @@
+.paranormal-details-page {
+    min-height: 100vh;
+    padding: 130px 5% 70px;
+    color: #eee;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.9)),
+        url("/images/background-images/paranormal-bg.webp") center top / cover no-repeat;
+    background-color: #05080b;
+}
+
+.paranormal-detail-hero {
+    max-width: 900px;
+    margin: 0 auto 65px;
+    text-align: center;
+}
+
+.paranormal-detail-hero>span {
+    color: #b32626;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.paranormal-detail-icon {
+    margin: 25px 0 10px;
+    font-size: 65px;
+}
+
+.paranormal-detail-hero h1 {
+    margin: 15px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 6vw, 65px);
+    letter-spacing: 3px;
+}
+
+.paranormal-detail-hero p {
+    max-width: 700px;
+    margin: auto;
+    color: #bbb;
+    line-height: 1.8;
+}
+
+.paranormal-detail-content {
+    max-width: 1100px;
+    margin: auto;
+}
+
+.paranormal-info-section {
+    margin-bottom: 45px;
+    padding: 28px;
+    background: rgba(12, 12, 12, 0.88);
+    border: 1px solid #383838;
+    border-left: 3px solid #850000;
+    border-radius: 5px;
+}
+
+.paranormal-info-section h2 {
+    margin-bottom: 20px;
+    color: #b32626;
+    font-family: Georgia, serif;
+    font-size: 23px;
+    letter-spacing: 2px;
+}
+
+.paranormal-info-section p,
+.paranormal-info-section li {
+    color: #bbb;
+    font-size: 14px;
+    line-height: 1.9;
+}
+
+.paranormal-info-section ul {
+    padding-left: 22px;
+}
+
+.paranormal-entities-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.paranormal-entity-card {
+    padding: 22px;
+    background: rgba(30, 10, 10, 0.7);
+    border: 1px solid #383838;
+    border-radius: 5px;
+}
+
+.paranormal-entity-card h3 {
+    margin-bottom: 12px;
+    color: #eee;
+    font-family: Georgia, serif;
+}
+
+.paranormal-back-button {
+    display: block;
+    width: fit-content;
+    margin: 45px auto 0;
+    padding: 13px 22px;
+    color: #fff;
+    background: #850000;
+    border: 1px solid #a00000;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.paranormal-back-button:hover {
+    background: #a00000;
+    box-shadow: 0 0 15px rgba(160, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+    .paranormal-details-page {
+        padding: 115px 16px 55px;
+    }
+
+    .paranormal-detail-hero {
+        margin-bottom: 40px;
+    }
+
+    .paranormal-info-section {
+        padding: 22px 18px;
+    }
+
+    .paranormal-entities-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,456 @@
+/* ========================================
+   FEAR LAB PAGE
+======================================== */
+
+.fear-lab-page {
+    min-height: 100vh;
+    padding: 115px 5% 80px;
+    color: #eee;
+
+    background-color: #050505;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.82)),
+        url("/images/background-images/fear-lab-background.webp");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow-x: hidden;
+}
+
+/* ========================================
+   BACKGROUND OVERLAY
+======================================== */
+
+.fear-lab-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.12);
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.fear-lab-heading {
+    position: relative;
+    z-index: 2;
+
+    max-width: 850px;
+    margin: 0 auto 45px;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+
+    animation: fearLabReveal 2s ease both;
+}
+
+@keyframes fearLabReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+.fear-lab-eyebrow {
+    color: #eee;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin: 0;
+}
+
+.fear-lab-heading h1 {
+    margin: 15px 0;
+
+    color: #eee;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 7vw, 75px);
+    letter-spacing: 5px;
+
+    text-shadow: 0 0 20px rgba(180, 0, 0, 0.5);
+}
+
+.fear-lab-divider {
+    width: 90px;
+    height: 3px;
+    margin-bottom: 15px;
+
+    background: #b00000;
+    box-shadow: 0 0 12px rgba(200, 0, 0, 0.7);
+}
+
+.fear-lab-subtitle {
+    color: #d00000;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin: 0;
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.fear-lab-collection {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.fear-lab-section-heading {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.fear-lab-section-heading h2 {
+    margin: 0 0 8px;
+
+    color: #eee;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.fear-lab-section-heading p {
+    margin: 0;
+
+    color: #ccc;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* ========================================
+   GAME GRID
+======================================== */
+
+.fear-lab-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* ========================================
+   GAME CARD
+======================================== */
+
+.fear-game-card {
+    position: relative;
+    isolation: isolate;
+
+    min-width: 0;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    background: #080505;
+    border: 1px solid #850000;
+    border-radius: 12px;
+
+    text-align: center;
+
+    box-shadow: none;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.fear-game-card:hover {
+    transform: translateY(-5px);
+    border-color: #e00000;
+}
+
+/* ========================================
+   CARD IMAGE
+======================================== */
+
+.fear-game-image {
+    position: relative;
+
+    width: 100%;
+    height: 190px;
+
+    margin: 0;
+    padding: 0;
+
+    overflow: hidden;
+    background: #130b0b;
+}
+
+.fear-game-image img {
+    display: block;
+
+    position: relative;
+    z-index: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.5s ease;
+}
+
+/* ========================================
+   SUBTLE RED SMOKY EFFECT
+======================================== */
+
+.fear-game-image::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at 50% 100%,
+            rgba(150, 0, 0, 0.22),
+            transparent 60%),
+        radial-gradient(ellipse at 0% 100%,
+            rgba(120, 0, 0, 0.12),
+            transparent 55%),
+        radial-gradient(ellipse at 100% 100%,
+            rgba(120, 0, 0, 0.12),
+            transparent 55%);
+
+    opacity: 0.7;
+}
+
+.fear-game-card:hover .fear-game-image img {
+    transform: scale(1.06);
+}
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.fear-game-card-content {
+    position: relative;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: stretch;
+
+    padding: 17px 18px 19px;
+
+    background:
+        radial-gradient(ellipse at 0% 0%,
+            rgba(130, 0, 0, 0.12),
+            transparent 65%),
+        radial-gradient(ellipse at 100% 100%,
+            rgba(110, 0, 0, 0.12),
+            transparent 65%),
+        #100606;
+}
+
+.fear-game-card-content h3 {
+    margin: 0 0 12px;
+
+    color: #eee;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.fear-game-card-content p {
+    min-height: 60px;
+    margin: 0 0 18px;
+
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   PLAY BUTTON
+======================================== */
+
+.fear-game-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 39px;
+    margin-top: auto;
+    padding: 10px;
+
+    color: #fff;
+    background: rgba(30, 0, 0, 0.45);
+    border: 1px solid #a00000;
+    border-radius: 5px;
+
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.fear-game-button:hover {
+    background: #850000;
+    border-color: #b00000;
+}
+
+/* ========================================
+   COMING SOON
+======================================== */
+
+.fear-game-status {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 39px;
+    margin-top: auto;
+    padding: 10px;
+
+    color: #999;
+    background: rgba(10, 5, 5, 0.5);
+    border: 1px solid #555;
+    border-radius: 5px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   DESKTOP CARD ALIGNMENT
+======================================== */
+
+@media (min-width: 1001px) {
+    .fear-game-card:nth-child(5) {
+        grid-column: 2 / span 2;
+    }
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+    .fear-lab-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+    .fear-lab-page {
+        padding: 115px 16px 55px;
+
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .fear-lab-heading {
+        margin-bottom: 35px;
+        padding: 10px 5px;
+    }
+
+    .fear-lab-eyebrow {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .fear-lab-heading h1 {
+        font-size: 40px;
+        letter-spacing: 3px;
+    }
+
+    .fear-lab-subtitle {
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    .fear-lab-section-heading {
+        margin-bottom: 25px;
+    }
+
+    .fear-lab-section-heading h2 {
+        font-size: 21px;
+    }
+
+    .fear-lab-section-heading p {
+        font-size: 11px;
+    }
+
+    .fear-lab-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .fear-game-card {
+        width: 100%;
+    }
+
+    .fear-game-image {
+        width: 100%;
+        height: 210px;
+    }
+
+    .fear-game-card-content {
+        padding: 18px;
+    }
+
+    .fear-game-card-content h3 {
+        font-size: 18px;
+    }
+
+    .fear-game-card-content p {
+        min-height: auto;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .fear-lab-heading {
+        animation: none;
+    }
+}

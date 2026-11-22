@@ -1,0 +1,379 @@
+/* STORY DETAILS PAGE */
+
+.story-details-page {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 120px 20px 70px;
+    overflow-x: hidden;
+    isolation: isolate;
+
+    background:
+        linear-gradient(rgba(5, 3, 4, 0.82), rgba(5, 3, 4, 0.96)),
+        url("/images/background-images/stories-background.webp") center / cover fixed;
+
+    color: #f5eeee;
+}
+
+.story-details-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: radial-gradient(ellipse at top,
+            rgba(150, 0, 30, 0.16),
+            transparent 65%);
+    pointer-events: none;
+}
+
+.story-details {
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.back-to-stories {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: #e34a61;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+.back-to-stories:hover {
+    color: white;
+}
+
+.story-details-cover {
+    width: 100%;
+    height: clamp(220px, 40vw, 430px);
+    overflow: hidden;
+    border: 1px solid rgba(190, 0, 40, 0.5);
+    border-radius: 6px;
+    box-shadow: 0 0 30px rgba(130, 0, 30, 0.2);
+}
+
+.story-details-cover img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.story-details-content {
+    padding: 35px 10px;
+}
+
+.story-details-category {
+    color: #e00035;
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+.story-details-content h1 {
+    margin-top: 15px;
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(30px, 5vw, 55px);
+    line-height: 1.2;
+    color: #f1e5e7;
+    text-shadow: 0 0 20px rgba(160, 0, 30, 0.35);
+}
+
+.story-details-description {
+    margin-top: 18px;
+    color: #c4b5b9;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.story-details-reading-time {
+    margin-top: 15px;
+    color: #a99da1;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.story-details-divider {
+    width: 100%;
+    height: 1px;
+    margin: 30px 0;
+    background: linear-gradient(to right,
+            #a00025,
+            rgba(160, 0, 37, 0.05));
+}
+
+.story-body {
+    color: #d3c8cb;
+    font-size: 16px;
+    line-height: 2;
+    white-space: pre-line;
+}
+
+.story-back-button {
+    display: inline-block;
+    margin-top: 40px;
+    padding: 13px 20px;
+    border: 1px solid #a00025;
+    color: #f1e5e7;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.story-back-button:hover {
+    background: #8d001e;
+}
+
+.story-not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 25px;
+    background: #050304;
+    color: #f1e5e7;
+    text-align: center;
+}
+
+.story-not-found a {
+    color: #e34a61;
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .story-details-page {
+        padding: 100px 15px 45px;
+        background-attachment: scroll;
+    }
+
+    .story-details-cover {
+        height: 230px;
+    }
+
+    .story-details-content {
+        padding: 25px 5px;
+    }
+
+    .story-details-content h1 {
+        font-size: 30px;
+    }
+
+    .story-details-description {
+        font-size: 14px;
+    }
+
+    .story-body {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+}
+
+/* ================================
+   COMIC BOOK READER
+================================ */
+
+.comic-reader {
+    position: relative;
+    z-index: 2;
+    width: min(1100px, 92%);
+    margin: 0 auto;
+    padding: 45px 0 70px;
+    color: #fff;
+}
+
+/* Back button */
+
+.back-to-stories {
+    display: inline-block;
+    color: #d6d6d6;
+    text-decoration: none;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin-bottom: 35px;
+    transition: color 0.3s ease;
+}
+
+.back-to-stories:hover {
+    color: #ff3333;
+}
+
+/* Comic heading */
+
+.comic-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.comic-heading p {
+    color: #e52b2b;
+    font-size: 13px;
+    letter-spacing: 4px;
+    margin-bottom: 12px;
+}
+
+.comic-heading h1 {
+    font-size: clamp(30px, 5vw, 52px);
+    font-weight: 900;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.4);
+}
+
+.comic-heading span {
+    color: #aaa;
+    font-size: 14px;
+}
+
+/* Comic image */
+
+.comic-page-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 40, 40, 0.35);
+    border-radius: 8px;
+    box-shadow: 0 0 35px rgba(180, 0, 0, 0.15);
+}
+
+.comic-page-image {
+    display: block;
+    width: 100%;
+    max-width: 850px;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 4px;
+    animation: comicPageAppear 0.4s ease;
+}
+
+@keyframes comicPageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Navigation */
+
+.comic-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.comic-nav-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 140px;
+    padding: 13px 20px;
+    background: #a50000;
+    border: 1px solid #e52b2b;
+    border-radius: 4px;
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.comic-nav-button:hover:not(:disabled) {
+    background: #e00000;
+    box-shadow: 0 0 18px rgba(255, 0, 0, 0.4);
+    transform: translateY(-2px);
+}
+
+.comic-nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.comic-page-counter {
+    color: #ddd;
+    font-size: 13px;
+    letter-spacing: 2px;
+    white-space: nowrap;
+}
+
+.finish-reading {
+    background: #171717;
+}
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+    .comic-reader {
+        width: 94%;
+        padding: 25px 0 45px;
+    }
+
+    .comic-heading {
+        margin-bottom: 22px;
+    }
+
+    .comic-heading h1 {
+        letter-spacing: 1px;
+    }
+
+    .comic-page-container {
+        padding: 6px;
+    }
+
+    .comic-page-image {
+        max-height: 70vh;
+    }
+
+    .comic-navigation {
+        gap: 8px;
+    }
+
+    .comic-nav-button {
+        min-width: 0;
+        padding: 11px 10px;
+        font-size: 10px;
+    }
+
+    .comic-page-counter {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+}
+
+/* Better comic reading on mobile */
+
+.comic-page-container {
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.comic-page-image {
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+@media (max-width: 600px) {
+    .comic-page-container {
+        min-height: 200px;
+    }
+
+    .comic-page-image {
+        width: 100%;
+        max-height: 75vh;
+        object-fit: contain;
+    }
+}

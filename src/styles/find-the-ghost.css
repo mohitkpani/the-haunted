@@ -1,0 +1,608 @@
+.find-ghost-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 20px 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    background-image: url("/images/background-images/find-the-ghost-background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.find-ghost-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.45),
+            rgba(0, 0, 0, 0.82)),
+        radial-gradient(circle,
+            transparent 10%,
+            rgba(0, 0, 0, 0.65) 100%);
+}
+
+/* INTRO SCREEN */
+
+.find-ghost-intro {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    color: #fff;
+    animation: findGhostReveal 2s ease both;
+}
+
+.find-ghost-eyebrow {
+    color: #e00000;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.find-ghost-intro h1 {
+    color: #f5eeee;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 8vw, 82px);
+    font-weight: 900;
+    letter-spacing: 4px;
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 0 0 25px rgba(180, 0, 0, 0.65);
+}
+
+.find-ghost-tagline {
+    color: #ddd;
+    font-size: 15px;
+    margin: 15px 0 28px;
+}
+
+.find-ghost-instructions {
+    max-width: 520px;
+    margin: 0 auto 28px;
+    padding: 24px 28px;
+    background: rgba(0, 0, 0, 0.58);
+    border: 1px solid rgba(180, 0, 0, 0.45);
+    text-align: left;
+    box-sizing: border-box;
+}
+
+.find-ghost-instructions h2 {
+    color: #e00000;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.find-ghost-instructions p {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.find-ghost-instructions ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.find-ghost-instructions li {
+    color: #ddd;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.find-ghost-instructions .find-ghost-warning {
+    color: #e00000;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin: 18px 0 0;
+}
+
+/* BUTTONS */
+
+.find-ghost-start-button {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 32px;
+    color: #fff;
+    background: #a00000;
+    border: 1px solid #e00000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.find-ghost-start-button:hover {
+    background: #d00000;
+    box-shadow: 0 0 20px rgba(200, 0, 0, 0.35);
+}
+
+.find-ghost-back-button {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0;
+    padding: 11px 22px;
+    color: #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+.find-ghost-back-button:hover {
+    color: #fff;
+    border-color: #b00000;
+    background: rgba(150, 0, 0, 0.3);
+}
+
+/* ACTIVE GAME SCREEN */
+
+.find-ghost-game {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 850px;
+    min-height: 480px;
+    margin: auto;
+    padding: 35px 25px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    color: #fff;
+    cursor: crosshair;
+
+    animation: findGhostReveal 1.5s ease both;
+}
+
+/* GAME HEADER */
+
+.find-ghost-game-header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 22px;
+}
+
+.find-ghost-game-header>div:first-child {
+    width: 100%;
+}
+
+.find-ghost-game-header .find-ghost-eyebrow {
+    margin: 0 0 12px;
+}
+
+.find-ghost-game h2 {
+    color: #f5eeee;
+    font-family: Georgia, serif;
+    font-size: clamp(32px, 5vw, 52px);
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1.15;
+    margin: 0;
+    text-shadow: 0 0 20px rgba(180, 0, 0, 0.7);
+}
+
+/* GAME STATISTICS */
+
+.find-ghost-stats {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 15px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.find-ghost-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 13px 18px;
+
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(180, 0, 0, 0.4);
+}
+
+.find-ghost-stat span {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.find-ghost-stat small {
+    color: #aaa;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* GAME INSTRUCTIONS */
+
+.find-ghost-hint {
+    color: #ddd;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    line-height: 1.6;
+    margin: 30px 0 20px;
+}
+
+.find-ghost-search-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    max-width: 520px;
+    padding: 15px 20px;
+    margin: 0 auto;
+
+    border-top: 1px solid rgba(180, 0, 0, 0.45);
+    border-bottom: 1px solid rgba(180, 0, 0, 0.45);
+}
+
+.find-ghost-search-message span {
+    color: #eee;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.find-ghost-search-message small {
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* ATTEMPT INDICATORS */
+
+.find-ghost-attempts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 13px;
+    margin-top: 28px;
+}
+
+.find-ghost-attempts span {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #ddd;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    font-weight: 700;
+
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.3s ease;
+}
+
+.find-ghost-attempts span.attempt-used {
+    color: #ff3333;
+    border-color: rgba(220, 0, 0, 0.7);
+    background: rgba(120, 0, 0, 0.25);
+}
+
+/* ANIMATION */
+
+@keyframes findGhostReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* RESULT SCREEN */
+
+.find-ghost-result {
+    position: relative;
+    z-index: 2;
+    width: min(90%, 580px);
+    margin: auto;
+    padding: 45px 35px;
+    text-align: center;
+    color: #fff;
+    box-sizing: border-box;
+
+    background: rgba(5, 4, 4, 0.92);
+    border: 1px solid rgba(180, 0, 0, 0.65);
+
+    box-shadow:
+        0 0 35px rgba(0, 0, 0, 0.8),
+        0 0 25px rgba(150, 0, 0, 0.15);
+
+    animation: findGhostReveal 1.5s ease both;
+}
+
+.find-ghost-result .find-ghost-eyebrow {
+    margin-bottom: 18px;
+}
+
+.find-ghost-result h2 {
+    color: #f5eeee;
+    font-family: Georgia, serif;
+    font-size: clamp(30px, 5vw, 48px);
+    line-height: 1.2;
+    letter-spacing: 2px;
+    margin: 0 0 18px;
+    text-shadow: 0 0 20px rgba(180, 0, 0, 0.7);
+}
+
+.find-ghost-result>p:not(.find-ghost-eyebrow) {
+    max-width: 430px;
+    margin: 0 auto 28px;
+    color: #c9c0c0;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+/* RESULT STATISTICS */
+
+.find-ghost-final-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    max-width: 400px;
+    margin: 28px auto;
+    padding: 22px;
+
+    background: rgba(100, 0, 0, 0.12);
+    border: 1px solid rgba(180, 0, 0, 0.3);
+}
+
+.find-ghost-final-stats span {
+    color: #aaa;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    line-height: 1.5;
+}
+
+.find-ghost-final-stats strong {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 25px;
+}
+
+.find-ghost-result .find-ghost-start-button {
+    margin: 25px auto 0;
+    min-width: 150px;
+}
+
+.find-ghost-result .find-ghost-back-button {
+    margin-top: 16px;
+}
+
+/* GHOST DISCOVERY JUMP SCARE */
+
+.find-ghost-jumpscare {
+    position: fixed;
+    inset: 0;
+    z-index: 20;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(30, 0, 0, 0.95);
+
+    animation: ghostDiscoveryFlash 2.2s ease both;
+}
+
+.find-ghost-jumpscare img {
+    width: min(75vw, 480px);
+    height: min(75vh, 550px);
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 35px rgba(220, 0, 0, 0.9));
+
+    animation: ghostDiscoveryLunge 0.65s ease-out both;
+}
+
+.find-ghost-jumpscare h2 {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 5vw, 48px);
+    letter-spacing: 4px;
+    text-shadow: 0 0 25px red;
+
+    animation: ghostDiscoveryText 0.8s ease both;
+}
+
+@keyframes ghostDiscoveryLunge {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+        filter: brightness(0.2) blur(15px);
+    }
+
+    60% {
+        transform: scale(1.15);
+        opacity: 1;
+        filter: brightness(1.5) blur(0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: brightness(1) blur(0);
+    }
+}
+
+@keyframes ghostDiscoveryFlash {
+    0% {
+        background: rgba(180, 0, 0, 0.95);
+    }
+
+    25% {
+        background: rgba(35, 0, 0, 0.95);
+    }
+
+    45% {
+        background: rgba(130, 0, 0, 0.95);
+    }
+
+    100% {
+        background: rgba(10, 0, 0, 0.95);
+    }
+}
+
+@keyframes ghostDiscoveryText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 600px) {
+    .find-ghost-page {
+        padding: 100px 16px 35px;
+        background-position: center;
+        background-attachment: scroll;
+    }
+
+    .find-ghost-intro h1 {
+        font-size: clamp(36px, 10vw, 55px);
+        letter-spacing: 2px;
+    }
+
+    .find-ghost-tagline {
+        font-size: 13px;
+    }
+
+    .find-ghost-instructions {
+        padding: 20px;
+    }
+
+    .find-ghost-game {
+        min-height: 440px;
+        padding: 25px 8px;
+    }
+
+    .find-ghost-game-header {
+        gap: 19px;
+    }
+
+    .find-ghost-game h2 {
+        font-size: clamp(28px, 8vw, 40px);
+        letter-spacing: 1px;
+    }
+
+    .find-ghost-stats {
+        gap: 10px;
+        max-width: 350px;
+    }
+
+    .find-ghost-stat {
+        padding: 12px 8px;
+    }
+
+    .find-ghost-stat span {
+        font-size: 22px;
+    }
+
+    .find-ghost-stat small {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .find-ghost-hint {
+        font-size: 11px;
+        margin: 25px 0 18px;
+    }
+
+    .find-ghost-search-message {
+        padding: 13px 10px;
+    }
+
+    .find-ghost-search-message span {
+        font-size: 11px;
+    }
+
+    .find-ghost-search-message small {
+        font-size: 11px;
+    }
+
+    .find-ghost-attempts {
+        gap: 9px;
+        margin-top: 23px;
+    }
+
+    .find-ghost-attempts span {
+        width: 32px;
+        height: 32px;
+        font-size: 16px;
+    }
+
+    .find-ghost-result {
+        width: 100%;
+        padding: 32px 18px;
+    }
+
+    .find-ghost-final-stats {
+        gap: 12px;
+        padding: 16px 10px;
+    }
+
+    .find-ghost-final-stats span {
+        font-size: 9px;
+    }
+
+    .find-ghost-jumpscare img {
+        width: 90vw;
+        height: 65vh;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .find-ghost-intro,
+    .find-ghost-game,
+    .find-ghost-result,
+    .find-ghost-jumpscare,
+    .find-ghost-jumpscare img,
+    .find-ghost-jumpscare h2 {
+        animation-duration: 0.01ms !important;
+    }
+}

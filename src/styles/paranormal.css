@@ -1,0 +1,374 @@
+/* ========================================
+   PARANORMAL PAGE
+======================================== */
+
+.paranormal-page {
+    min-height: 100vh;
+    padding: 140px 5% 80px;
+    color: #eee;
+
+    background-color: #05080b;
+    background-image:
+        linear-gradient(rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.82)),
+        url("/images/background-images/paranormal-bg.webp");
+
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* ========================================
+   PAGE HEADER
+======================================== */
+
+.paranormal-header {
+    max-width: 850px;
+    margin: 0 auto 65px;
+    text-align: center;
+
+    animation: paranormalReveal 2s ease both;
+}
+
+.paranormal-subtitle {
+    color: #b32626;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.paranormal-header h1 {
+    margin: 15px 0;
+    color: #eee;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 7vw, 75px);
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(0, 0, 0, 0.8);
+}
+
+.paranormal-intro {
+    max-width: 700px;
+    margin: 0 auto;
+    color: #ccc;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+/* ========================================
+   WELCOME ANIMATION
+======================================== */
+
+@keyframes paranormalReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* ========================================
+   MAIN CONTENT
+======================================== */
+
+.paranormal-content {
+    max-width: 1250px;
+    margin: auto;
+}
+
+/* ========================================
+   CATEGORY FILTER
+======================================== */
+
+.paranormal-filter {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.paranormal-filter button {
+    padding: 11px 18px;
+    color: #bbb;
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid #383838;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.3s ease;
+}
+
+.paranormal-filter button:hover,
+.paranormal-filter button.active {
+    color: #fff;
+    background: #850000;
+    border-color: #a00000;
+    box-shadow: 0 0 15px rgba(160, 0, 0, 0.3);
+}
+
+/* ========================================
+   PARANORMAL CARD GRID
+======================================== */
+
+.paranormal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+}
+
+/* ========================================
+   PARANORMAL CARD
+======================================== */
+
+.paranormal-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: rgba(10, 8, 8, 0.96);
+    border: 1px solid #650000;
+    border-radius: 12px;
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.paranormal-card:hover {
+    transform: translateY(-5px);
+    border-color: #b00000;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* ========================================
+   CARD IMAGE
+======================================== */
+
+.paranormal-image {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #130b0b;
+}
+
+.paranormal-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.paranormal-card:hover .paranormal-image img {
+    transform: scale(1.06);
+}
+
+/* Category Badge */
+
+.paranormal-image span {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+
+    padding: 5px 10px;
+
+    color: #fff;
+    background: #850000;
+    border-radius: 3px;
+
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ========================================
+   CARD CONTENT
+======================================== */
+
+.paranormal-card-content {
+    padding: 17px 18px 19px;
+}
+
+.paranormal-card-content h2 {
+    margin-bottom: 12px;
+
+    color: #eee;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+/* ========================================
+   LOCATION
+======================================== */
+
+.paranormal-location {
+    margin-bottom: 15px;
+
+    color: #aaa;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.paranormal-location span {
+    margin-right: 5px;
+    color: #b32626;
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.paranormal-description {
+    min-height: 60px;
+    margin-bottom: 18px;
+
+    color: #bbb;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+/* ========================================
+   EXPLORE BUTTON
+======================================== */
+
+.paranormal-explore-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    min-height: 39px;
+    padding: 10px;
+
+    color: #fff;
+    background: transparent;
+    border: 1px solid #a00000;
+    border-radius: 5px;
+
+    text-decoration: none;
+    text-align: center;
+
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.paranormal-explore-button:hover {
+    background: #850000;
+    border-color: #b00000;
+}
+
+/* ========================================
+   EMPTY STATE
+======================================== */
+
+.paranormal-empty {
+    grid-column: 1 / -1;
+    padding: 50px 20px;
+    text-align: center;
+    color: #bbb;
+}
+
+/* ========================================
+   TABLET RESPONSIVE
+======================================== */
+
+@media (max-width: 1000px) {
+    .paranormal-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .paranormal-page {
+        padding: 115px 16px 55px;
+
+        background-color: #05080b;
+        background-image:
+            linear-gradient(rgba(0, 0, 0, 0.55),
+                rgba(0, 0, 0, 0.82)),
+            url("/images/background-images/paranormal-bg.webp");
+
+        background-size: 100% auto;
+        background-position: center top;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+    }
+
+    .paranormal-header {
+        margin-bottom: 40px;
+    }
+
+    .paranormal-subtitle {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+
+    .paranormal-header h1 {
+        font-size: 40px;
+        letter-spacing: 3px;
+    }
+
+    .paranormal-intro {
+        font-size: 14px;
+    }
+
+    .paranormal-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .paranormal-image {
+        height: 210px;
+    }
+
+    .paranormal-card-content {
+        padding: 18px;
+    }
+
+    .paranormal-card-content h2 {
+        font-size: 18px;
+    }
+
+    .paranormal-description {
+        min-height: auto;
+    }
+
+    .paranormal-filter {
+        gap: 8px;
+        margin-bottom: 30px;
+    }
+
+    .paranormal-filter button {
+        padding: 9px 12px;
+        font-size: 10px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION ACCESSIBILITY
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+    .paranormal-header {
+        animation: none;
+    }
+}

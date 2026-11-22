@@ -1,0 +1,490 @@
+.dont-blink-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 20px 50px;
+    overflow: hidden;
+
+    background-image: url("/images/background-images/dont-blink-background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.dont-blink-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.78)),
+        radial-gradient(circle,
+            transparent 10%,
+            rgba(0, 0, 0, 0.55) 100%);
+}
+
+.dont-blink-intro {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    color: #fff;
+    animation: dontBlinkReveal 2s ease both;
+}
+
+.dont-blink-eyebrow {
+    color: #e00000;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 5px;
+    margin-bottom: 12px;
+}
+
+.dont-blink-intro h1 {
+    color: #f5eeee;
+    font-size: clamp(48px, 8vw, 92px);
+    font-family: Georgia, serif;
+    font-weight: 900;
+    letter-spacing: 5px;
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 0 0 25px rgba(180, 0, 0, 0.65);
+}
+
+.dont-blink-tagline {
+    color: #ddd;
+    font-size: 15px;
+    margin: 15px 0 28px;
+}
+
+.dont-blink-instructions {
+    max-width: 520px;
+    margin: 0 auto 28px;
+    padding: 24px 28px;
+    background: rgba(0, 0, 0, 0.58);
+    border: 1px solid rgba(180, 0, 0, 0.45);
+    text-align: left;
+}
+
+.dont-blink-instructions h2 {
+    color: #e00000;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-align: center;
+    margin: 0 0 15px;
+}
+
+.dont-blink-instructions p {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.dont-blink-instructions ul {
+    padding-left: 20px;
+    margin: 15px 0;
+}
+
+.dont-blink-instructions li {
+    color: #ddd;
+    font-size: 13px;
+    line-height: 2;
+}
+
+.dont-blink-instructions .dont-blink-warning {
+    color: #e00000;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 3px;
+    margin: 18px 0 0;
+}
+
+.dont-blink-start-button {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 32px;
+    color: #fff;
+    background: #a00000;
+    border: 1px solid #e00000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.dont-blink-start-button:hover {
+    background: #d00000;
+    box-shadow: 0 0 20px rgba(200, 0, 0, 0.35);
+}
+
+.dont-blink-back-button {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0;
+    padding: 11px 22px;
+    color: #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+.dont-blink-back-button:hover {
+    color: #fff;
+    border-color: #b00000;
+    background: rgba(150, 0, 0, 0.3);
+}
+
+@keyframes dontBlinkReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@media (max-width: 600px) {
+    .dont-blink-page {
+        padding: 100px 16px 35px;
+        background-position: center;
+    }
+
+    .dont-blink-intro h1 {
+        letter-spacing: 2px;
+    }
+
+    .dont-blink-tagline {
+        font-size: 13px;
+    }
+
+    .dont-blink-instructions {
+        padding: 20px;
+    }
+}
+
+/* DON'T BLINK GAME */
+
+.dont-blink-game {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    animation: dontBlinkReveal 1.5s ease both;
+}
+
+.dont-blink-game-warning {
+    color: #e00000;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 35px;
+}
+
+.dont-blink-timer {
+    width: 190px;
+    height: 190px;
+    margin: 0 auto;
+    border: 2px solid rgba(180, 0, 0, 0.7);
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 35px rgba(180, 0, 0, 0.25);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dont-blink-timer span {
+    color: #fff;
+    font-family: Georgia, serif;
+    font-size: 75px;
+    font-weight: bold;
+    line-height: 1;
+    text-shadow: 0 0 20px rgba(200, 0, 0, 0.8);
+}
+
+.dont-blink-timer small {
+    margin-top: 12px;
+    color: #c5baba;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+.dont-blink-game-message {
+    margin-top: 30px;
+    color: #ddd;
+    font-size: 14px;
+    letter-spacing: 1px;
+}
+
+.dont-blink-result {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px 20px;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(180, 0, 0, 0.4);
+}
+
+.dont-blink-result h2 {
+    color: #f5eeee;
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 6vw, 60px);
+    letter-spacing: 3px;
+    text-shadow: 0 0 20px rgba(180, 0, 0, 0.7);
+}
+
+.dont-blink-result>p:not(.dont-blink-eyebrow) {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 20px 0 28px;
+}
+
+@media (max-width: 600px) {
+    .dont-blink-timer {
+        width: 160px;
+        height: 160px;
+    }
+
+    .dont-blink-timer span {
+        font-size: 60px;
+    }
+
+    .dont-blink-game-warning {
+        font-size: 11px;
+        letter-spacing: 3px;
+    }
+}
+
+/* BLOODY MARY GHOST */
+
+.dont-blink-ghost {
+    position: fixed;
+    z-index: 5;
+    left: 50%;
+    top: 50%;
+
+    width: 300px;
+    max-height: 85vh;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translate(-50%, -40%) scale(0.7);
+    filter: brightness(0.5) blur(5px);
+
+    transition:
+        opacity 0.25s ease,
+        transform 0.4s ease,
+        filter 0.4s ease,
+        visibility 0.25s;
+}
+
+.dont-blink-ghost img {
+    display: block;
+    width: 100%;
+    max-height: 85vh;
+    object-fit: contain;
+    filter: drop-shadow(0 0 25px rgba(180, 0, 0, 0.8));
+}
+
+.dont-blink-ghost.ghost-visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, -50%) scale(1);
+    filter: brightness(1) blur(0);
+}
+
+@media (max-width: 600px) {
+    .dont-blink-ghost {
+        width: 220px;
+    }
+}
+
+/* Screen shake during Bloody Mary jump scare */
+.dont-blink-page.ghost-scare-active {
+    animation: scareScreenShake 0.45s ease-in-out;
+}
+
+@keyframes scareScreenShake {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    15% {
+        transform: translate(-7px, 3px);
+    }
+
+    30% {
+        transform: translate(7px, -3px);
+    }
+
+    45% {
+        transform: translate(-5px, -2px);
+    }
+
+    60% {
+        transform: translate(5px, 2px);
+    }
+
+    75% {
+        transform: translate(-3px, 0);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/* Sudden red flash */
+.dont-blink-overlay.red-flash-active {
+    animation: redScareFlash 0.5s ease-out;
+}
+
+@keyframes redScareFlash {
+    0% {
+        background: rgba(180, 0, 0, 0.65);
+    }
+
+    25% {
+        background: rgba(120, 0, 0, 0.3);
+    }
+
+    50% {
+        background: rgba(180, 0, 0, 0.45);
+    }
+
+    100% {
+        background: transparent;
+    }
+}
+
+/* RANDOM CORRIDOR LIGHT FLICKERING */
+
+.dont-blink-page.game-active .dont-blink-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(ellipse at center,
+            transparent 35%,
+            rgba(70, 0, 0, 0.35) 100%);
+    opacity: 0;
+    animation: corridorLightFlicker 8s infinite;
+}
+
+@keyframes corridorLightFlicker {
+
+    0%,
+    12%,
+    14%,
+    35%,
+    37%,
+    60%,
+    62%,
+    100% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 0.65;
+    }
+
+    36% {
+        opacity: 0.45;
+    }
+
+    61% {
+        opacity: 0.75;
+    }
+
+    63% {
+        opacity: 0.15;
+    }
+}
+
+/* DRAMATIC GAME OVER EXPERIENCE */
+
+.dont-blink-result {
+    position: relative;
+    overflow: hidden;
+    animation: resultReveal 1.5s ease both;
+    box-shadow: 0 0 35px rgba(160, 0, 0, 0.2);
+}
+
+@keyframes resultReveal {
+    0% {
+        opacity: 0;
+        transform: scale(0.88);
+        filter: blur(10px);
+    }
+
+    60% {
+        opacity: 1;
+        transform: scale(1.02);
+        filter: blur(0);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.dont-blink-result h2 {
+    animation: survivalTitleReveal 1.8s ease both;
+}
+
+@keyframes survivalTitleReveal {
+    0% {
+        opacity: 0;
+        letter-spacing: 12px;
+        text-shadow: 0 0 0 transparent;
+    }
+
+    60% {
+        opacity: 1;
+        letter-spacing: 3px;
+        text-shadow: 0 0 30px rgba(220, 0, 0, 0.9);
+    }
+
+    100% {
+        opacity: 1;
+        letter-spacing: 3px;
+        text-shadow: 0 0 20px rgba(180, 0, 0, 0.7);
+    }
+}
+
+.dont-blink-result .dont-blink-eyebrow {
+    animation: resultEyebrow 2s ease both;
+}
+
+@keyframes resultEyebrow {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

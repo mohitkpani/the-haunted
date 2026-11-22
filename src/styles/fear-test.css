@@ -1,0 +1,481 @@
+.fear-test-page {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 110px 20px 50px;
+    overflow: hidden;
+    box-sizing: border-box;
+
+    background-image: url("/images/background-images/fear-test-background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.fear-test-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.78);
+}
+
+.fear-test-intro,
+.fear-test-game,
+.fear-test-result {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 720px;
+    margin: auto;
+    color: #fff;
+    text-align: center;
+    animation: fearTestReveal 1.5s ease both;
+}
+
+.fear-test-eyebrow {
+    color: #e00000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 5px;
+    margin-bottom: 18px;
+}
+
+.fear-test-intro h1 {
+    font-family: Georgia, serif;
+    font-size: clamp(45px, 8vw, 82px);
+    letter-spacing: 4px;
+    margin: 0;
+    text-shadow: 0 0 25px rgba(180, 0, 0, 0.7);
+}
+
+.fear-test-tagline {
+    color: #ccc;
+    font-size: 13px;
+    letter-spacing: 2px;
+    margin: 18px 0 30px;
+}
+
+.fear-test-instructions {
+    max-width: 520px;
+    margin: auto auto 28px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.65);
+    border: 1px solid rgba(180, 0, 0, 0.45);
+}
+
+.fear-test-instructions h2 {
+    color: #e00000;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.fear-test-instructions p {
+    color: #ccc;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.fear-test-rules {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 22px 0;
+}
+
+.fear-test-rules span {
+    padding: 9px 12px;
+    color: #ddd;
+    background: rgba(120, 0, 0, 0.2);
+    border: 1px solid rgba(180, 0, 0, 0.35);
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.fear-test-warning,
+.fear-test-final-message {
+    color: #e00000 !important;
+    font-size: 10px !important;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.fear-test-button {
+    display: block;
+    margin: 0 auto;
+    padding: 14px 32px;
+    color: #fff;
+    background: #a00000;
+    border: 1px solid #e00000;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.fear-test-button:hover {
+    background: #d00000;
+    box-shadow: 0 0 20px rgba(200, 0, 0, 0.4);
+}
+
+.fear-test-back {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0;
+    padding: 11px 22px;
+    color: #ccc;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(0, 0, 0, 0.45);
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    transition: 0.3s ease;
+}
+
+.fear-test-back:hover {
+    color: #fff;
+    border-color: #b00000;
+}
+
+/* GAME */
+
+.fear-test-game {
+    max-width: 680px;
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(180, 0, 0, 0.35);
+}
+
+.fear-test-progress {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 25px 0 10px;
+    color: #ddd;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.fear-test-progress span:last-child {
+    color: #e00000;
+    font-size: 20px;
+}
+
+.fear-test-progress .timer-danger {
+    animation: timerPulse 0.7s infinite alternate;
+}
+
+.fear-test-progress-track {
+    width: 100%;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.12);
+    margin-bottom: 35px;
+}
+
+.fear-test-progress-track div {
+    height: 100%;
+    background: #c00000;
+    transition: width 0.4s ease;
+}
+
+.fear-test-game h2 {
+    color: #f5eeee;
+    font-family: Georgia, serif;
+    font-size: clamp(23px, 4vw, 34px);
+    line-height: 1.4;
+    margin: 0 0 30px;
+}
+
+.fear-test-answers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.fear-test-answer {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 15px;
+    color: #ddd;
+    text-align: left;
+    font-size: 12px;
+    line-height: 1.5;
+    background: rgba(15, 15, 15, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.fear-test-answer span {
+    min-width: 27px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    background: rgba(150, 0, 0, 0.5);
+    font-weight: 800;
+}
+
+.fear-test-answer:hover:not(:disabled),
+.fear-test-answer.selected {
+    background: rgba(130, 0, 0, 0.3);
+    border-color: #d00000;
+    color: #fff;
+}
+
+.fear-test-answer:disabled {
+    cursor: default;
+    opacity: 0.8;
+}
+
+.fear-test-small-warning {
+    margin-top: 30px;
+    color: #b00000;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+/* RESULT */
+
+.fear-test-result {
+    max-width: 580px;
+    padding: 45px 30px;
+    background: rgba(5, 4, 4, 0.92);
+    border: 1px solid rgba(180, 0, 0, 0.65);
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.8);
+}
+
+.fear-test-result h2 {
+    color: #f5eeee;
+    font-family: Georgia, serif;
+    font-size: clamp(35px, 7vw, 55px);
+    letter-spacing: 2px;
+    text-shadow: 0 0 20px rgba(180, 0, 0, 0.7);
+    margin: 15px 0;
+}
+
+.fear-test-score {
+    margin: 25px 0;
+}
+
+.fear-test-score strong {
+    color: #e00000;
+    font-family: Georgia, serif;
+    font-size: 55px;
+}
+
+.fear-test-score span {
+    color: #aaa;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.fear-test-result>p:not(.fear-test-eyebrow) {
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 430px;
+    margin: 20px auto;
+}
+
+.fear-test-result .fear-test-final-message {
+    color: #e00000 !important;
+    font-size: 10px !important;
+    margin: 25px auto;
+}
+
+/* ANIMATIONS */
+
+@keyframes fearTestReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+@keyframes timerPulse {
+    from {
+        opacity: 0.6;
+        text-shadow: 0 0 5px red;
+    }
+
+    to {
+        opacity: 1;
+        text-shadow: 0 0 18px red;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+    .fear-test-page {
+        padding: 100px 15px 35px;
+        background-attachment: scroll;
+    }
+
+    .fear-test-intro h1 {
+        letter-spacing: 2px;
+    }
+
+    .fear-test-tagline {
+        font-size: 11px;
+        line-height: 1.7;
+    }
+
+    .fear-test-instructions {
+        padding: 20px 15px;
+    }
+
+    .fear-test-rules {
+        gap: 7px;
+    }
+
+    .fear-test-rules span {
+        font-size: 8px;
+        padding: 8px;
+    }
+
+    .fear-test-game {
+        padding: 22px 14px;
+    }
+
+    .fear-test-game h2 {
+        font-size: 23px;
+    }
+
+    .fear-test-answers {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .fear-test-answer {
+        min-height: 60px;
+    }
+
+    .fear-test-result {
+        padding: 32px 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fear-test-intro,
+    .fear-test-game,
+    .fear-test-result,
+    .fear-test-progress .timer-danger {
+        animation: none;
+    }
+}
+
+/* FEAR TEST JUMP SCARE */
+
+.fear-test-jumpscare {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(30, 0, 0, 0.96);
+    pointer-events: none;
+
+    animation: fearTestScareFlash 1.5s ease both;
+}
+
+.fear-test-jumpscare img {
+    width: min(75vw, 480px);
+    height: min(70vh, 520px);
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 35px red);
+
+    animation: fearTestScareLunge 0.65s ease-out both;
+}
+
+.fear-test-jumpscare h2 {
+    color: white;
+    font-family: Georgia, serif;
+    font-size: clamp(28px, 5vw, 48px);
+    letter-spacing: 4px;
+    text-shadow: 0 0 25px red;
+
+    animation: fearTestScareText 0.6s ease both;
+}
+
+@keyframes fearTestScareLunge {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+        filter: brightness(0.2) blur(15px);
+    }
+
+    60% {
+        transform: scale(1.15);
+        opacity: 1;
+        filter: brightness(1.5) blur(0);
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        filter: brightness(1) blur(0);
+    }
+}
+
+@keyframes fearTestScareFlash {
+
+    0%,
+    35% {
+        background: rgba(180, 0, 0, 0.98);
+    }
+
+    50% {
+        background: rgba(15, 0, 0, 0.98);
+    }
+
+    100% {
+        background: rgba(30, 0, 0, 0.96);
+    }
+}
+
+@keyframes fearTestScareText {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* REDUCE MOTION ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .fear-test-jumpscare,
+    .fear-test-jumpscare img,
+    .fear-test-jumpscare h2 {
+        animation-duration: 0.01ms !important;
+    }
+}

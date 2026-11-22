@@ -1,0 +1,411 @@
+/* Main page */
+
+.haunt-me-page {
+    position: relative;
+    isolation: isolate;
+    min-height: 100vh;
+    padding: 130px 20px 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #eee;
+    text-align: center;
+
+    background-image: url("/images/background-images/haunt-me-background.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Dark background overlay */
+
+.haunt-me-background-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.55),
+            rgba(0, 0, 0, 0.38),
+            rgba(0, 0, 0, 0.72));
+
+    pointer-events: none;
+}
+
+/* Intro and game container */
+
+.haunt-me-intro,
+.haunt-me-game {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    max-width: 850px;
+    margin: 0 auto;
+
+    animation: hauntReveal 1.5s ease both;
+}
+
+.haunt-me-intro>p,
+.haunt-me-warning {
+    color: #d32626;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 4px;
+}
+
+.haunt-me-intro h1 {
+    margin: 20px 0;
+    font-family: Georgia, serif;
+    font-size: clamp(55px, 10vw, 100px);
+    letter-spacing: 8px;
+    text-shadow: 0 0 25px #850000;
+}
+
+.haunt-me-intro span {
+    display: block;
+    margin-bottom: 35px;
+    color: #ccc;
+}
+
+/* Buttons */
+
+.haunt-me-page button {
+    padding: 14px 28px;
+    color: white;
+    background: #850000;
+    border: 1px solid #b00000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: 0.3s ease;
+}
+
+.haunt-me-page button:hover {
+    background: #b00000;
+    box-shadow: 0 0 20px rgba(180, 0, 0, 0.4);
+}
+
+/* Transparent horror scene - no card */
+
+.haunt-me-scene {
+    position: relative;
+    width: 100%;
+    min-height: 380px;
+    margin: 30px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+
+    overflow: visible;
+    box-sizing: border-box;
+}
+
+/* Countdown */
+
+.haunt-me-darkness {
+    position: relative;
+    z-index: 2;
+}
+
+.haunt-me-darkness span {
+    display: block;
+    color: #e00020;
+    font-family: Georgia, serif;
+    font-size: 90px;
+    text-shadow: 0 0 30px #a00000;
+
+    animation: countdownPulse 1s ease-in-out infinite;
+}
+
+.haunt-me-darkness p {
+    color: #ccc;
+    letter-spacing: 1px;
+}
+
+/* Ghost reveal scene */
+
+.haunt-me-scene.revealed {
+    min-height: 520px;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    animation: none;
+}
+
+/* Ghost character */
+
+.haunt-me-ghost {
+    position: relative;
+    z-index: 3;
+
+    width: 100%;
+    padding: 15px 0;
+
+    background: transparent;
+
+    animation: ghostReveal 1.5s ease both;
+}
+
+.haunt-me-ghost img {
+    display: block;
+
+    width: min(500px, 95vw);
+    max-height: 480px;
+    height: auto;
+
+    margin: 0 auto;
+    object-fit: contain;
+
+    filter: drop-shadow(0 0 30px rgba(180, 0, 0, 0.8));
+
+    animation:
+        ghostFloat 4s ease-in-out 1.5s infinite,
+        ghostGlow 3s ease-in-out 1.5s infinite;
+}
+
+.haunt-me-ghost h2 {
+    margin: 10px 0;
+    color: #e00025;
+    font-family: Georgia, serif;
+    letter-spacing: 5px;
+    text-shadow: 0 0 20px rgba(180, 0, 0, 0.9);
+}
+
+.haunt-me-ghost p {
+    color: #ddd;
+}
+
+/* Main page animation */
+
+@keyframes hauntReveal {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Ghost emerges closer from the darkness */
+
+@keyframes ghostReveal {
+    0% {
+        opacity: 0;
+        transform: translateY(150px) scale(0.4);
+        filter: blur(20px);
+    }
+
+    65% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.2);
+        filter: blur(2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1.12);
+        filter: blur(0);
+    }
+}
+
+/* Ghost floating */
+
+@keyframes ghostFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-12px) scale(1.025);
+    }
+}
+
+/* Red ghost glow */
+
+@keyframes ghostGlow {
+
+    0%,
+    100% {
+        filter: drop-shadow(0 0 15px rgba(120, 0, 0, 0.45));
+    }
+
+    50% {
+        filter: drop-shadow(0 0 35px rgba(200, 0, 0, 0.9));
+    }
+}
+
+/* Countdown pulse */
+
+@keyframes countdownPulse {
+
+    0%,
+    100% {
+        opacity: 0.7;
+        transform: scale(1);
+    }
+
+    50% {
+        opacity: 1;
+        transform: scale(1.08);
+    }
+}
+
+/* Initial red flash */
+
+@keyframes ghostFlash {
+
+    0%,
+    100% {
+        background-color: transparent;
+    }
+
+    50% {
+        background-color: rgba(100, 0, 0, 0.3);
+    }
+}
+
+
+/* Mobile responsive */
+
+@media (max-width: 600px) {
+
+    .haunt-me-page {
+        min-height: 100svh;
+        padding: 110px 14px 35px;
+        background-attachment: scroll;
+        background-position: center center;
+    }
+
+    .haunt-me-intro,
+    .haunt-me-game {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .haunt-me-intro h1 {
+        font-size: clamp(42px, 12vw, 65px);
+        letter-spacing: 4px;
+    }
+
+    .haunt-me-intro span {
+        font-size: 13px;
+    }
+
+    .haunt-me-warning {
+        margin: 12px 0 18px;
+        font-size: 10px;
+        letter-spacing: 3px;
+    }
+
+    /* Countdown scene */
+
+    .haunt-me-scene {
+        min-height: 280px;
+        margin: 15px 0;
+    }
+
+    /* Ghost reveal scene */
+
+    .haunt-me-scene.revealed {
+        min-height: auto;
+        margin: 10px 0 20px;
+    }
+
+    /* Ghost character */
+
+    .haunt-me-ghost {
+        padding: 0;
+    }
+
+    .haunt-me-ghost img {
+        width: min(310px, 78vw);
+        max-height: 48svh;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .haunt-me-ghost h2 {
+        margin: 12px 0 7px;
+        font-size: clamp(19px, 6vw, 25px);
+        letter-spacing: 3px;
+    }
+
+    .haunt-me-ghost p {
+        margin: 5px 0 12px;
+        font-size: 13px;
+    }
+
+    /* Buttons */
+
+    .haunt-me-page button {
+        padding: 12px 22px;
+        font-size: 11px;
+    }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 380px) {
+
+    .haunt-me-ghost img {
+        width: 72vw;
+        max-height: 42svh;
+    }
+
+    .haunt-me-ghost h2 {
+        font-size: 19px;
+        letter-spacing: 2px;
+    }
+
+    .haunt-me-warning {
+        letter-spacing: 2px;
+    }
+}
+
+.haunt-me-intro button {
+    display: block;
+    margin: 30px auto 0;
+}
+
+.back-to-fear-lab {
+    display: block;
+    width: fit-content;
+    margin: 18px auto 0;
+    padding: 10px 20px;
+
+    color: #ccc;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    text-decoration: none;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+
+    transition: 0.3s ease;
+}
+
+.back-to-fear-lab:hover {
+    color: #fff;
+    border-color: #a00000;
+    background: rgba(150, 0, 0, 0.2);
+}

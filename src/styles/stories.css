@@ -1,0 +1,571 @@
+/* =========================================
+   HORROR STORIES PAGE
+========================================= */
+
+.stories-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+    isolation: isolate;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    background-image:
+        linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.65)),
+        url("/images/background-images/stories-background.webp");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #f5eeee;
+}
+
+/* =========================================
+   DARK OVERLAY
+========================================= */
+
+.stories-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+
+    background:
+        radial-gradient(ellipse at center,
+            transparent 10%,
+            rgba(0, 0, 0, 0.45) 100%),
+        linear-gradient(to top,
+            rgba(0, 0, 0, 0.65),
+            transparent 60%);
+}
+
+/* =========================================
+   HERO HEADING
+========================================= */
+
+.stories-heading {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    flex-shrink: 0;
+
+    margin: auto 0;
+    padding: 110px 20px 50px;
+
+    text-align: center;
+    animation: storiesReveal 2s ease both;
+}
+
+.stories-eyebrow {
+    margin-bottom: 22px;
+
+    color: #d00025;
+    font-size: 11px;
+    letter-spacing: 5px;
+}
+
+.stories-heading h1 {
+    font-family: "Cinzel", Georgia, serif;
+    font-size: clamp(38px, 7vw, 85px);
+    font-weight: 800;
+    letter-spacing: clamp(2px, 0.8vw, 9px);
+
+    color: #f0e5e7;
+
+    text-shadow:
+        0 0 12px rgba(180, 0, 30, 0.7),
+        0 0 35px rgba(100, 0, 15, 0.8);
+}
+
+.stories-divider {
+    width: 110px;
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: #c00025;
+    box-shadow: 0 0 15px #c00025;
+}
+
+.stories-subtitle {
+    color: #d1c2c5;
+    font-size: 12px;
+    letter-spacing: 5px;
+}
+
+/* Heading animation */
+
+@keyframes storiesReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* =========================================
+   STORIES COLLECTION
+========================================= */
+
+.stories-collection {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    padding: 60px 5% 80px;
+
+    background: linear-gradient(to bottom,
+            rgba(5, 3, 4, 0.65),
+            #050304 15%);
+}
+
+.stories-section-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.stories-section-heading h2 {
+    font-family: "Cinzel", serif;
+    font-size: clamp(22px, 3vw, 34px);
+    letter-spacing: 3px;
+    color: #f0e5e7;
+}
+
+.stories-section-heading p {
+    margin-top: 10px;
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #bd263d;
+}
+
+/* =========================================
+   RESPONSIVE STORIES GRID
+========================================= */
+
+.stories-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+
+    gap: 22px;
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+}
+
+/* =========================================
+   STORY CARD
+========================================= */
+
+.story-card {
+    min-width: 0;
+    overflow: hidden;
+
+    background: rgba(15, 9, 12, 0.94);
+
+    border: 1px solid rgba(160, 0, 32, 0.3);
+    border-radius: 6px;
+
+    transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+
+    border-color: #a00025;
+
+    box-shadow:
+        0 10px 30px rgba(150, 0, 30, 0.22);
+}
+
+/* =========================================
+   STORY COVER IMAGE
+========================================= */
+
+.story-card-image {
+    position: relative;
+
+    width: 100%;
+    height: 190px;
+
+    overflow: hidden;
+    background: #10090c;
+}
+
+.story-card-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.story-card:hover .story-card-image img {
+    transform: scale(1.08);
+}
+
+/* Story category */
+
+.story-category {
+    position: absolute;
+    bottom: 14px;
+    left: 14px;
+    z-index: 2;
+
+    padding: 6px 10px;
+
+    background: rgba(5, 3, 4, 0.85);
+
+    color: #ff526b;
+    font-size: 9px;
+    letter-spacing: 2px;
+}
+
+/* =========================================
+   STORY CONTENT
+========================================= */
+
+.story-card-content {
+    padding: 20px 16px;
+}
+
+.story-card-content h3 {
+    font-family: "Cinzel", serif;
+    font-size: 17px;
+
+    color: #f1e5e7;
+    line-height: 1.5;
+}
+
+.story-card-content>p {
+    margin-top: 12px;
+    min-height: 45px;
+
+    color: #a99da1;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   STORY CARD FOOTER
+========================================= */
+
+.story-card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+
+    margin-top: 20px;
+    padding-top: 15px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.story-card-footer span {
+    color: #807276;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.story-card-footer button {
+    padding: 8px 10px;
+
+    border: 1px solid #790019;
+    background: transparent;
+
+    color: #e6cbd1;
+    font-size: 9px;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.story-card-footer button:hover {
+    background: #8d001e;
+    color: white;
+}
+
+/* =========================================
+   TABLET - TWO CARDS PER ROW
+========================================= */
+
+@media (min-width: 601px) and (max-width: 1000px) {
+    .stories-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .stories-heading {
+        padding-top: 100px;
+    }
+
+    .stories-collection {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+}
+
+/* =========================================
+   MOBILE - ONE CARD PER ROW
+========================================= */
+
+@media (max-width: 600px) {
+
+    .stories-page {
+        width: 100%;
+        min-height: 100svh;
+
+        overflow-x: hidden;
+        overflow-y: visible;
+
+        background-size: auto 100svh;
+        background-position: center top;
+        background-attachment: scroll;
+    }
+
+    /* Hero heading */
+
+    .stories-heading {
+        width: 100%;
+        min-height: 65svh;
+
+        margin: 0;
+        padding: 110px 15px 35px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .stories-eyebrow {
+        font-size: 9px;
+        letter-spacing: 3px;
+        margin-bottom: 18px;
+        text-align: center;
+    }
+
+    .stories-heading h1 {
+        width: 100%;
+
+        font-size: clamp(32px, 9vw, 43px);
+        line-height: 1.2;
+        letter-spacing: 2px;
+
+        white-space: normal;
+        text-align: center;
+    }
+
+    .stories-divider {
+        width: 85px;
+        margin: 20px auto;
+    }
+
+    .stories-subtitle {
+        font-size: 9px;
+        line-height: 1.8;
+        letter-spacing: 2px;
+        text-align: center;
+    }
+
+    /* Collection */
+
+    .stories-collection {
+        width: 100%;
+        padding: 35px 16px 55px;
+
+        background: linear-gradient(to bottom,
+                rgba(5, 3, 4, 0.92),
+                #050304 100%);
+    }
+
+    .stories-section-heading {
+        margin-bottom: 25px;
+    }
+
+    .stories-section-heading h2 {
+        font-size: 22px;
+        letter-spacing: 2px;
+        line-height: 1.4;
+    }
+
+    .stories-section-heading p {
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    /* One card per row */
+
+    .stories-grid {
+        width: 100%;
+
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .story-card {
+        width: 100%;
+        border-radius: 6px;
+
+        background: rgba(15, 9, 12, 0.98);
+    }
+
+    .story-card-image {
+        width: 100%;
+        height: 190px;
+    }
+
+    .story-card-content {
+        padding: 18px;
+    }
+
+    .story-card-content h3 {
+        font-size: 18px;
+        line-height: 1.5;
+    }
+
+    .story-card-content>p {
+        font-size: 12px;
+        min-height: auto;
+        line-height: 1.7;
+    }
+
+    .story-card-footer {
+        margin-top: 18px;
+    }
+
+    /* Mobile navigation */
+
+    .haunted-navbar {
+        padding: 10px 12px;
+        gap: 10px;
+    }
+
+    .nav-logo {
+        font-size: 20px;
+    }
+
+    .nav-links {
+        width: 100%;
+        gap: 18px;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        justify-content: flex-start;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .nav-links::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links a {
+        flex-shrink: 0;
+        font-size: 9px;
+        letter-spacing: 1px;
+    }
+}
+
+/* =========================================
+   VERY SMALL MOBILE SCREENS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .stories-heading {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .stories-heading h1 {
+        font-size: 32px;
+    }
+
+    .stories-collection {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .stories-heading,
+    .story-card,
+    .story-card-image img {
+        animation: none;
+        transition: none;
+    }
+}
+
+.read-story-link {
+    display: inline-block;
+    padding: 8px 10px;
+    border: 1px solid #790019;
+    background: transparent;
+    color: #e6cbd1;
+    font-size: 9px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.read-story-link:hover {
+    background: #8d001e;
+    color: white;
+}
+
+/* =================================
+   HAUNTED PLACES WELCOME ANIMATION
+================================= */
+
+@keyframes placesReveal {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+        filter: blur(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    .places-heading {
+        animation: none;
+    }
+}
